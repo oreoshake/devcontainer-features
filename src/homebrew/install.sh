@@ -4,12 +4,6 @@ BREW_PREFIX=${BREW_PREFIX:-"/home/linuxbrew/.linuxbrew"}
 SHALLOW_CLONE=${SHALLOW_CLONE:-"false"}
 USERNAME=${USERNAME:-"automatic"}
 
-ARCHITECTURE="$(uname -m)"
-if [ "${ARCHITECTURE}" != "amd64" ] && [ "${ARCHITECTURE}" != "x86_64" ]; then
-  echo "(!) Architecture $ARCHITECTURE unsupported"
-  exit 1
-fi
-
 cleanup() {
   source /etc/os-release
   case "${ID}" in
